@@ -1,0 +1,21 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace ChildBinding.Demo2.Module.Logic
+{
+    public class ModuleManager : Zenject.IInitializable
+    {
+        private readonly Common.ISceneManager _sceneManager;
+
+        public ModuleManager(Common.ISceneManager sceneManager)
+        {
+            _sceneManager = sceneManager;
+        }
+
+        public void Initialize()
+        {
+            _sceneManager.SayHello();
+        }
+    }
+}
